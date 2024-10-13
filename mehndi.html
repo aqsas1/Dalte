@@ -6,35 +6,126 @@
     <title>Mehndi Package - Wedding Organisation Dalte</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Styles for the slider */
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fafafa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #333;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #d4a373;
+            border-radius: 5px;
+        }
+
+        /* Header */
+        header {
+            background-color: #d4a373;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        /* Package Details */
+        #package-details {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .package-detail-info h2 {
+            color: #d4a373;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .package-detail-info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .package-detail-info ul li {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Image Slider */
         .slider {
-            width: 100%;
             max-width: 600px;
-            margin: 20px auto;
+            margin: 2rem auto;
             position: relative;
         }
 
         .slides {
             display: flex;
             overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
         }
 
         .slides img {
             width: 100%;
             height: auto;
-            border-radius: 8px;
+            border-radius: 10px;
         }
 
         .prev, .next {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.6);
             color: white;
             border: none;
-            padding: 10px;
+            padding: 0.8rem;
             cursor: pointer;
             border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
         }
 
         .prev {
@@ -48,18 +139,23 @@
         /* Book Package Button */
         .book-btn {
             display: block;
-            margin: 20px auto;
-            padding: 1rem 2rem;
+            width: 80%;
+            max-width: 300px;
+            margin: 2rem auto;
+            padding: 1rem;
             background-color: #d4a373;
             color: white;
+            font-size: 1.3rem;
             text-align: center;
-            font-size: 1.2rem;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .book-btn:hover {
             background-color: #b5835a;
+            transform: translateY(-3px);
         }
     </style>
 </head>
@@ -75,10 +171,13 @@
         </ul>
     </nav>
 
+    <!-- Header Section -->
     <header>
         <h1>Mehndi Package</h1>
+        <p>Exquisite mehndi designs for your special day</p>
     </header>
 
+    <!-- Package Details Section -->
     <section id="package-details">
         <div class="package-detail-info">
             <h2>$500</h2>
@@ -89,7 +188,6 @@
                 <li>Custom mehndi designs</li>
                 <li>All materials included</li>
             </ul>
-            <p>Perfect for traditional or contemporary mehndi designs for your special day.</p>
         </div>
 
         <!-- Image Slider -->
@@ -107,6 +205,7 @@
         <a href="booking.html" class="book-btn">Book This Package</a>
     </section>
 
+    <!-- JavaScript for Slider -->
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slides img');
