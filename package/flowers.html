@@ -170,7 +170,20 @@
         </div>
 
         <!-- Book Package Button -->
-        <a href="booking.html" class="book-btn">Book This Package</a>
+        <a href="#" class="book-btn" onclick="sendWhatsApp('Flower Decoration Package')">Book This Package</a>
+
+<script>
+    function sendWhatsApp(packageName, price) {
+        // Construct the message with bold formatting for package name and price
+        const message = `Hello I'm interested in the *${packageName}*. Please provide more details about the package and availability. Looking forward to hearing from you!`;
+
+        // WhatsApp URL with the specific number and encoded message
+        const whatsappURL = `https://wa.me/919561122963?text=${encodeURIComponent(message)}`;
+
+        // Open WhatsApp with the message in a new tab
+        window.open(whatsappURL, '_blank');
+    }
+</script>
     </section>
  <!-- Footer Section -->
     <footer>
