@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Wedding Organisation Dalte</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fafafa;
+            color: #333;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #d4a373;
+            border-radius: 5px;
+        }
+
+        header {
+            background-color: #d4a373;
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        section {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        section form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        section form input, section form textarea {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border 0.3s ease;
+        }
+
+        section form input:focus, section form textarea:focus {
+            border-color: #d4a373;
+            outline: none;
+        }
+
+        section form button {
+            padding: 1rem;
+            background-color: #d4a373;
+            color: white;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        section form button:hover {
+            background-color: #b5835a;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+  
+    <!-- Header Section -->
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+  <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contact Form -->
+    <section>
+        <form action="submit_contact.php" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="phone" placeholder="Your Phone" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+</body>
+</html>
