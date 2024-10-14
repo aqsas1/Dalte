@@ -100,12 +100,7 @@
 <body>
 
     <!-- Navigation Bar -->
-  
-    <!-- Header Section -->
-    <header  style="font-family:Card W01 Black Italic">
-        <h1>Contact Us</h1>
-    </header>
-  <nav>
+    <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -113,17 +108,23 @@
         </ul>
     </nav>
 
+    <!-- Header Section -->
+    <header style="font-family:Card W01 Black Italic">
+        <h1>Contact Us</h1>
+    </header>
+
     <!-- Contact Form -->
     <section>
-        <form action="submit_contact.php" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <input type="text" name="phone" placeholder="Your Phone" required>
-            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <form onsubmit="sendWhatsAppMessage(); return false;">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <input type="text" id="phone" placeholder="Your Phone" required>
+            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
             <button type="submit">Send Message</button>
         </form>
     </section>
- <!-- Footer Section -->
+
+    <!-- Footer Section -->
     <footer>
       <div class="social-media">
             <a href="https://instagram.com/cuti_eeee01" target="_blank">Instagram</a>
@@ -136,5 +137,23 @@
         </p>
         <p class="copyright">&copy; 2024 Wedding Organisation Dalte. All rights reserved.</p>
     </footer>
+
+    <script>
+        function sendWhatsAppMessage() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+
+            // Format the message for WhatsApp
+            const whatsappMessage = `Hello!%0A%0AName: *${name}*%0AEmail: *${email}*%0APhone: *${phone}*%0A%0A*Message:*%0A${message}%0A%0ARegards,%0AWedding Organisation Dalte`;
+
+            // WhatsApp URL with the specific number and encoded message
+            const whatsappURL = `https://wa.me/919561122963?text=${encodeURIComponent(whatsappMessage)}`;
+
+            // Open WhatsApp with the message in a new tab
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
 </body>
 </html>
