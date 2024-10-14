@@ -146,7 +146,7 @@
             const message = document.getElementById('message').value;
 
             // Format the message for WhatsApp
-            const whatsappMessage = `Hello!%0A%0AName: *${name}*%0AEmail: *${email}*%0APhone: *${phone}*%0A%0A*Message:*%0A${message}%0A%0ARegards,%0AWedding Organisation Dalte`;
+            const whatsappMessage = `Hello!%0A%0AName: *${name}*%0AEmail: *${email}*%0APhone: *${phone}* %0A *Message:* %0A${message}%0A%0ARegards,%0AWedding Organisation Dalte`;
 
             // WhatsApp URL with the specific number and encoded message
             const whatsappURL = `https://wa.me/919561122963?text=${encodeURIComponent(whatsappMessage)}`;
