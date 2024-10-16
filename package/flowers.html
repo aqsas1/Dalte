@@ -15,8 +15,6 @@
             padding: 0;
         }
 
-        /* Navigation Bar */
-      
         /* Header */
         header {
             background-color: #d4a373;
@@ -45,24 +43,98 @@
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .package-detail-info h2 {
-            color: #d4a373;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .package-detail-info ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .package-detail-info ul li {
+        .package-detail-info p {
             font-size: 1.1rem;
-            margin-bottom: 0.5rem;
         }
 
-        /* Image Slider */
-        .slider {
+        /* Book Package Button */
+        .book-btn {
+            display: block;
+            width: 80%;
+            max-width: 300px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: #d4a373;
+            color: white;
+            font-size: 1.3rem;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .book-btn:hover {
+            background-color: #b5835a;
+            transform: translateY(-3px);
+        }
+
+        /* Popup Modal Form Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+            overflow: auto; /* Enable scrolling if needed */
+        }
+
+        .modal-content {
+            text-align: center;
+            background-color: #fff;
+            margin: 10% auto; /* 10% from the top and centered */
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 400px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-content input {
+            display: block;
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .modal-content button {
+            width: 100%;
+            padding: 10px;
+            background-color: #d4a373;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .modal-content button:hover {
+            background-color: #b5835a;
+        }
+
+        /* Close Button */
+        .close {
+       
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover, .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+ /* Image Slider */
+ .slider {
             max-width: 400px;
             margin: 2rem auto;
             position: relative;
@@ -106,57 +178,32 @@
             right: 10px;
         }
 
-        /* Book Package Button */
-        .book-btn {
-            display: block;
-            width: 80%;
-            max-width: 300px;
-            margin: 2rem auto;
-            padding: 1rem;
-            background-color: #d4a373;
-            color: white;
-            font-size: 1.3rem;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 8px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
 
-        .book-btn:hover {
-            background-color: #b5835a;
-            transform: translateY(-3px);
-        }
+
     </style>
 </head>
 <body>
 
-  
-
     <!-- Header Section -->
-    <header  class="font">
+    <header>
         <h1>Flower Decoration Package</h1>
         <p>Elegant Flower Decorations for Your Wedding</p>
     </header>
-    
-  <!-- Navigation Bar -->
-    <nav>
-        <ul>
-            <li><a href="https://aqsas1.github.io/Dalte/index.html">Home</a></li>
-            <li><a href="https://aqsas1.github.io/Dalte/about.html">About</a></li>
-            <li><a href="https://aqsas1.github.io/Dalte/services.html">Services</a></li>
-            <li><a href="https://aqsas1.github.io/Dalte/contact.html">Contact</a></li>
-        </ul>
-    </nav>
-    
+ <!-- Navigation Bar -->
+ <nav>
+    <ul>
+        <li><a href="https://aqsas1.github.io/Dalte/index.html">Home</a></li>
+        <li><a href="https://aqsas1.github.io/Dalte/about.html">About</a></li>
+        <li><a href="https://aqsas1.github.io/Dalte/services.html">Services</a></li>
+        <li><a href="https://aqsas1.github.io/Dalte/contact.html">Contact</a></li>
+    </ul>
+</nav>
+
     <!-- Package Details Section -->
     <section id="package-details">
         <div class="package-detail-info">
-   
-           <p>Our flower decoration package provides exquisite floral arrangements for every aspect of your wedding. From the ceremony to the reception, we ensure that your venue is beautifully adorned with fresh, vibrant flowers.</p>
+            <p>Our flower decoration package provides exquisite floral arrangements for every aspect of your wedding. From the ceremony to the reception, we ensure that your venue is beautifully adorned with fresh, vibrant flowers.</p>
         </div>
-
-        <!-- Image Slider -->
         <div class="slider">
             <div class="slides">
                 <img src="https://aqsas1.github.io/Dalte/Img/flower1.jpg" alt="Mehndi Design 1">
@@ -168,60 +215,101 @@
             <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
             <button class="next" onclick="moveSlide(1)">&#10095;</button>
         </div>
-
         <!-- Book Package Button -->
-        <a href="#" class="book-btn" onclick="sendWhatsApp('Flower Decoration Package')">Book This Package</a>
-
-<script>
-    function sendWhatsApp(packageName, price) {
-        // Construct the message with bold formatting for package name and price
-        const message = `Hello!%0A%0AI'm interested in the *${packageName}*.%0A%0A %E2%9C%A8 Please provide more details about the package and availability.%0A%0ALooking forward to hearing from you!`;
-
-        // WhatsApp URL with the specific number and encoded message
-        const whatsappURL = `https://wa.me/919561122963?text=${message}`;
-
-        // Open WhatsApp with the message in a new tab
-        window.open(whatsappURL, '_blank');
-    }
-</script>
-
+        <a class="book-btn" onclick="openModal()">Book This Package</a>
     </section>
- <!-- Footer Section -->
     <footer>
-      <div class="social-media">
-            <a href="https://instagram.com/cuti_eeee01" target="_blank">Instagram</a>
+        <div class="social-media">
+              <a href="https://instagram.com/cuti_eeee01" target="_blank">Instagram</a>
+          </div>
+          <p>
+              At <strong>Aqsa Events</strong>, we believe that every love story deserves to be celebrated with style, grace, and joy. 
+              Our dedicated team of wedding planners will work closely with you to ensure that every detail of your special day is flawless. From 
+              breathtaking mehndi ceremonies to stunning floral decorations and picture-perfect photography, we handle it all so you can enjoy your 
+              dream wedding without any worries.
+          </p>
+          <p class="copyright">&copy; 2024 Aqsa Events. All rights reserved.</p>
+      </footer>
+      <!-- JavaScript for Slider -->
+      <script>
+          let currentSlide = 0;
+          const slides = document.querySelectorAll('.slides img');
+          
+          function moveSlide(n) {
+              currentSlide += n;
+              if (currentSlide >= slides.length) {
+                  currentSlide = 0;
+              }
+              if (currentSlide < 0) {
+                  currentSlide = slides.length - 1;
+              }
+              updateSlide();
+          }
+  
+          function updateSlide() {
+              slides.forEach((slide, index) => {
+                  slide.style.display = index === currentSlide ? 'block' : 'none';
+              });
+          }
+  
+          updateSlide(); // Initialize the first slide
+      </script>
+    <!-- Popup Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <form id="bookingForm" onsubmit="submitBooking(event)">
+                <input type="hidden" name="date" id="bookingDate" required> <!-- Hidden Today's Date -->
+                <input type="text" name="name" placeholder="Your Name" required><br>
+                <input type="email" name="email" placeholder="Your Email" required><br>
+                <input type="text" name="phone" placeholder="Your Phone Number" required><br>
+                <input type="hidden" name="package" value="Flower Decoration Package"> <!-- Hidden Package Name -->
+                <button type="submit">Submit Booking</button>
+            </form>
         </div>
-        <p>
-            At <strong>Aqsa Events</strong>, we believe that every love story deserves to be celebrated with style, grace, and joy. 
-            Our dedicated team of wedding planners will work closely with you to ensure that every detail of your special day is flawless. From 
-            breathtaking mehndi ceremonies to stunning floral decorations and picture-perfect photography, we handle it all so you can enjoy your 
-            dream wedding without any worries.
-        </p>
-        <p class="copyright">&copy; 2024 Aqsa Events. All rights reserved.</p>
-    </footer>
-    <!-- JavaScript for Slider -->
+    </div>
+
+    <!-- JavaScript for Modal and Form Submission -->
     <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slides img');
-        
-        function moveSlide(n) {
-            currentSlide += n;
-            if (currentSlide >= slides.length) {
-                currentSlide = 0;
-            }
-            if (currentSlide < 0) {
-                currentSlide = slides.length - 1;
-            }
-            updateSlide();
+        // Open the modal
+        function openModal() {
+            document.getElementById('bookingModal').style.display = 'block';
+            setDate(); // Set today's date when the modal opens
         }
 
-        function updateSlide() {
-            slides.forEach((slide, index) => {
-                slide.style.display = index === currentSlide ? 'block' : 'none';
-            });
+        // Close the modal
+        function closeModal() {
+            document.getElementById('bookingModal').style.display = 'none';
         }
 
-        updateSlide(); // Initialize the first slide
+        // Close the modal if clicked outside the content area
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('bookingModal')) {
+                closeModal();
+            }
+        }
+
+        // Set the hidden date input with today's date
+        function setDate() {
+            const today = new Date().toISOString().split('T')[0]; // Get the date in yyyy-mm-dd format
+            document.getElementById('bookingDate').value = today;
+        }
+
+        // Submit the booking form to Google Sheets
+        function submitBooking(e) {
+            e.preventDefault();
+
+            const formData = new FormData(document.getElementById('bookingForm'));
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzXOunJdpJl3tvmItymvy6dxbSZARnwUgfV0FrltAFBZVCba_ubQEPY-JoJhswuydKB/exec'; // Replace with your Google Apps Script URL
+
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => {
+                    alert('Booking Successful!');
+                    closeModal();
+                    document.getElementById('bookingForm').reset();
+                })
+                .catch(error => alert('Error! Booking failed.'));
+        }
     </script>
 
 </body>
