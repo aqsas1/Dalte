@@ -5,10 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aqsa Events - Home</title>
     <link rel="stylesheet" href="styles.css">
-    
-</head>
-<body>
+    <style>
+        /* Styles for the popup */
+        #loginPopup {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+            padding-top: 100px; /* Location of the box */
+        }
 
+        /* Popup content */
+        .popup-content {
+            background-color: white;
+            margin: 5% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            width: 300px; /* Could be more or less, depending on screen size */
+            text-align: center; /* Center text */
+        }
+
+        .popup-content h2 {
+            color: #d4a373; /* Use your primary color for the title */
+        }
+
+        .popup-content input {
+            width: 90%; /* Width of the input fields */
+            padding: 10px;
+            margin: 10px 0; /* Space between inputs */
+            border-radius: 5px;
+            border: 1px solid #ccc; /* Light gray border */
+        }
+
+        .popup-content button {
+            background-color: #d4a373;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .popup-content button:hover {
+            background-color: #b5835a; /* Darker shade for hover effect */
+        }
+    </style>
+</head>
+<body onload="showLoginPopup()">
 
     <header class="font">
         <h1>Aqsa Events</h1>
@@ -24,12 +74,30 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-  
+    
+    <!-- Popup for Login -->
+    <div id="loginPopup">
+        <div class="popup-content">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username" required><br>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" required><br>
+                <button type="button" onclick="validateLogin()">Submit</button>
+            </form>
+        </div>
+    </div>
 
+    <!-- Packages Section -->
+    <section id="packages" style="display: none;">
+        
 <iframe width="99%"  height="600px"  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSUbY3TZergMA5b84qn4MkFFW3tcXCaDuhXQyS2N_zRJMQ8RtrTHd8FL0vi7aZaFupS7b48elNlFq79/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
 
-     
- <!-- Footer Section -->
+        
+    </section>
+
+    <!-- Footer Section -->
     <footer>
         <div class="social-media">
             <a href="https://instagram.com/cuti_eeee01" target="_blank">Instagram</a>
@@ -42,5 +110,25 @@
         </p>
         <p class="copyright">&copy; 2024 Aqsa Events. All rights reserved.</p>
     </footer>
+
+    <script>
+        function showLoginPopup() {
+            document.getElementById('loginPopup').style.display = 'block';
+        }
+
+        function validateLogin() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Replace 'yourUsername' and 'yourPassword' with your actual credentials
+            if (username === 'Aqsa' && password === 'Aqsa123') {
+                document.getElementById('loginPopup').style.display = 'none';
+                document.getElementById('packages').style.display = 'block';
+            } else {
+                alert('Invalid username or password. Please try again.');
+            }
+        }
+    </script>
+
 </body>
 </html>
